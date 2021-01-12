@@ -1,0 +1,87 @@
+@import '../../themes/theme';
+
+.container {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  max-height: 700px;
+  position: relative;
+  width: 100%;
+}
+
+.slides {
+  height: calc((9 / 16 * 100vw) - #{$spacing-600});
+  margin: auto;
+  max-height: 400px;
+  max-width: 700px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slide {
+  height: 0;
+  overflow: hidden;
+  padding-top: calc(9 / 16 * 100%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+  }
+}
+
+.back,
+.next {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid $white;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 24px;
+  height: 40px;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  z-index: 100;
+}
+
+.back {
+  left: $spacing-50;
+
+  svg {
+    transform: translateX(-10%);
+  }
+}
+
+.next {
+  right: $spacing-50;
+
+  svg {
+    transform: translateX(10%);
+  }
+}
+
+.text {
+  padding: $spacing-100;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

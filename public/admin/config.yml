@@ -1,0 +1,363 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: public/imgs
+public_folder: imgs
+collections:
+  - name: 'pages'
+    label: 'pages'
+    files:
+      - label: 'Home'
+        name: 'home'
+        file: 'src/data/pages/index.md'
+        fields:
+          - { label: 'Title - SEO', name: 'title', widget: 'string' }
+          - { label: 'Description - SEO', name: 'description', widget: 'text' }
+          - { label: 'Keywords - SEO', name: 'keywords', widget: 'text' }
+          - { label: 'Header', name: 'mainHeader', widget: 'string' }
+          - label: 'Quote'
+            name: 'blockQuote'
+            widget: 'object'
+            fields:
+              - { label: 'Quote', name: 'quote', widget: 'string' }
+              - { label: 'Author', name: 'author', widget: 'string' }
+              - { label: 'Link', name: 'link', widget: 'string' }
+              - {
+                  label: 'Book',
+                  name: 'book',
+                  widget: 'string',
+                  required: false,
+                }
+              - {
+                  label: 'Call To Action button',
+                  name: 'cta_text',
+                  widget: 'string',
+                }
+              - label: 'Image'
+                name: 'image'
+                widget: 'object'
+                collapsed: true
+                fields:
+                  - { label: 'Alt', name: 'alt', widget: 'string' }
+                  - { label: 'Src', name: 'src', widget: 'image' }
+          - label: 'Drawer'
+            name: 'drawer'
+            widget: list
+            fields:
+              - { label: 'Label', name: 'label', widget: 'string' }
+              - label: 'Books'
+                name: 'books'
+                widget: 'list'
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string' }
+                  - {
+                      label: 'YouTube Url',
+                      name: 'youTubeUrl',
+                      widget: 'string',
+                      required: false,
+                    }
+                  - label: 'Image'
+                    name: 'image'
+                    widget: 'object'
+                    collapsed: true
+                    fields:
+                      - { label: 'Alt', name: 'alt', widget: 'string' }
+                      - { label: 'Src', name: 'src', widget: 'image' }
+                  - { label: 'Body Text', name: 'text', widget: 'markdown' }
+          - label: 'Call To Action Cards'
+            name: 'callToActionCards'
+            widget: 'list'
+            fields:
+              - { label: 'Caption', name: 'caption', widget: 'string' }
+              - { label: 'Link', name: 'link', widget: 'string' }
+              - label: 'Image'
+                name: 'image'
+                widget: 'object'
+                collapsed: true
+                fields:
+                  - { label: 'Alt', name: 'alt', widget: 'string' }
+                  - { label: 'Src', name: 'src', widget: 'image' }
+      - label: 'About'
+        name: 'about'
+        file: 'src/data/pages/about.md'
+        fields:
+          - { label: 'Title - SEO', name: 'title', widget: 'string' }
+          - { label: 'Description - SEO', name: 'description', widget: 'text' }
+          - { label: 'Keywords - SEO', name: 'keywords', widget: 'text' }
+          - { label: 'Header', name: 'header', widget: 'string' }
+          - label: 'Quote'
+            name: 'blockQuote'
+            widget: 'object'
+            fields:
+              - { label: 'Quote', name: 'quote', widget: 'string' }
+              - { label: 'Author', name: 'author', widget: 'string' }
+              - {
+                  label: 'Book',
+                  name: 'book',
+                  widget: 'string',
+                  required: false,
+                }
+              - label: 'Image'
+                name: 'image'
+                widget: 'object'
+                collapsed: true
+                fields:
+                  - { label: 'Alt', name: 'alt', widget: 'string' }
+                  - { label: 'Src', name: 'src', widget: 'image' }
+          - label: 'About Me Image'
+            name: 'authorImage'
+            widget: object
+            fields:
+              - { label: 'Image', name: 'src', widget: 'image' }
+              - { label: 'Alt', name: 'alt', widget: 'string' }
+          - { label: 'About Me', name: 'body', widget: 'markdown' }
+          - label: 'Site Facts'
+            name: 'siteFacts'
+            widget: 'object'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - label: 'Fact List'
+                name: 'facts'
+                widget: 'list'
+                summary: '{{title}}'
+                field:
+                  - { label: 'Fact', name: 'fact', widget: 'string' }
+          - label: Publications
+            name: publications
+            widget: 'object'
+            fields:
+              - { label: Title, name: 'title', widget: string }
+              - label: Publication list
+                name: list
+                widget: 'list'
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - {
+                      label: Date,
+                      name: publishedDate,
+                      widget: date,
+                      format: 'MMM Do YY',
+                    }
+                  - { label: Link, name: links, widget: string }
+          - label: 'Author Facts'
+            name: 'authorFacts'
+            widget: 'object'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - label: 'Fact List'
+                name: 'facts'
+                widget: 'list'
+                summary: '{{title}}'
+                field:
+                  - { label: 'Fact', name: 'fact', widget: 'string' }
+      - label: 'Videos'
+        name: 'videos'
+        file: 'src/data/pages/videos.md'
+        fields:
+          - { label: 'Title - SEO', name: 'title', widget: 'string' }
+          - { label: 'Description - SEO', name: 'description', widget: 'text' }
+          - { label: 'Keywords - SEO', name: 'keywords', widget: 'text' }
+          - { label: 'Header', name: 'header', widget: 'string' }
+          - label: 'Reviews'
+            name: 'reviews'
+            widget: 'object'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - label: 'Videos'
+                name: 'videos'
+                widget: 'list'
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string' }
+                  - {
+                      label: 'Posted',
+                      name: 'date',
+                      widget: 'date',
+                      format: 'MMM Do YY',
+                    }
+                  - {
+                      label: 'Youtube Link',
+                      name: 'videoLink',
+                      widget: 'string',
+                    }
+                  - label: 'Poster'
+                    name: 'poster'
+                    widget: 'object'
+                    fields:
+                      - { label: 'Src', name: 'src', widget: 'image' }
+                      - { label: 'Alt', name: 'alt', widget: 'string' }
+          - label: 'Interviews'
+            name: 'interviews'
+            widget: 'object'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - label: 'Videos'
+                name: 'videos'
+                widget: 'list'
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string' }
+                  - {
+                      label: 'Posted',
+                      name: 'date',
+                      widget: 'date',
+                      format: 'MMM Do YY',
+                    }
+                  - {
+                      label: 'Youtube Link',
+                      name: 'videoLink',
+                      widget: 'string',
+                    }
+                  - label: 'Poster'
+                    name: 'poster'
+                    widget: 'object'
+                    fields:
+                      - { label: 'Src', name: 'src', widget: 'image' }
+                      - { label: 'Alt', name: 'alt', widget: 'string' }
+      - label: 'Events'
+        name: 'events'
+        file: 'src/data/pages/events.md'
+        fields:
+          - { label: 'Title - SEO', name: 'title', widget: 'string' }
+          - { label: 'Description - SEO', name: 'description', widget: 'text' }
+          - { label: 'Keywords - SEO', name: 'keywords', widget: 'text' }
+          - { label: 'Header', name: 'header', widget: 'string' }
+          - label: 'Up Coming Events'
+            name: 'upComingEvent'
+            widget: 'object'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - label: 'Events'
+                name: 'events'
+                widget: 'list'
+                fields:
+                  - { label: 'Event Title', name: 'title', widget: 'string' }
+                  - {
+                      label: 'Date',
+                      name: 'date',
+                      widget: 'date',
+                      format: 'MMM Do YY',
+                    }
+                  - { label: 'Location', name: 'location', widget: 'string' }
+                  - label: 'Image'
+                    name: 'image'
+                    widget: 'object'
+                    fields:
+                      - { label: 'Src', name: 'src', widget: 'image' }
+                      - { label: 'Alt', name: 'alt', widget: 'string' }
+          - label: 'Past Events'
+            name: 'pastEvent'
+            widget: 'object'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - label: 'Events'
+                name: 'events'
+                widget: 'list'
+                fields:
+                  - { label: 'Event Title', name: 'title', widget: 'string' }
+                  - {
+                      label: 'Date',
+                      name: 'date',
+                      widget: 'date',
+                      format: 'MMM Do YY',
+                    }
+                  - { label: 'Location', name: 'location', widget: 'string' }
+                  - label: 'Image'
+                    name: 'image'
+                    widget: 'object'
+                    fields:
+                      - { label: 'Src', name: 'src', widget: 'image' }
+                      - { label: 'Alt', name: 'alt', widget: 'string' }
+          - label: 'Reviews'
+            name: 'reviews'
+            widget: 'object'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - label: 'Review List'
+                name: 'reviews'
+                widget: 'list'
+                fields:
+                  - { label: 'Quote', name: 'quote', widget: 'text' }
+                  - { label: 'Author', name: 'author', widget: 'string' }
+          - label: Past Images
+            name: carousel
+            widget: 'object'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - label: 'Slides'
+                name: 'slides'
+                widget: 'list'
+                fields:
+                  - label: 'Image'
+                    name: 'img'
+                    widget: 'object'
+                    fields:
+                      - { label: 'Src', name: 'src', widget: 'image' }
+                      - { label: 'Alt', name: 'alt', widget: 'string' }
+                  - {
+                      label: 'Description',
+                      name: 'description',
+                      widget: 'string',
+                    }
+      - label: 'Reading Now'
+        name: 'readingNow'
+        file: 'src/data/pages/readingNow.md'
+        fields:
+          - { label: 'Title - SEO', name: 'title', widget: 'string' }
+          - { label: 'Description - SEO', name: 'description', widget: 'text' }
+          - { label: 'Keywords - SEO', name: 'keywords', widget: 'text' }
+          - { label: 'Header', name: 'header', widget: 'string' }
+          - label: 'Tiles'
+            name: 'tiles'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Location', name: 'location', widget: 'string' }
+              - { label: 'Book', name: 'book', widget: 'string' }
+              - { label: 'Author', name: 'author', widget: 'string' }
+              - label: 'Image'
+                name: 'image'
+                widget: 'object'
+                fields:
+                  - { label: 'Src', name: 'src', widget: 'image' }
+                  - { label: 'Alt', name: 'alt', widget: 'string' }
+  - label: 'Blog posts'
+    name: 'blog'
+    folder: 'src/data/posts'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title - SEO', name: 'title', widget: 'string' }
+      - { label: 'Description - SEO', name: 'description', widget: 'text' }
+      - { label: 'Keywords - SEO', name: 'keywords', widget: 'text' }
+      - { label: 'Title', name: 'postTitle', widget: 'string', required: true }
+      - { label: 'Excerpt', name: 'excerpt', widget: text, required: true }
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'date',
+          format: 'MMM Do YY',
+          required: true,
+        }
+      - label: 'Thumbnail Image'
+        name: 'thumbnail'
+        widget: 'object'
+        fields:
+          - { label: 'Src', name: 'src', widget: 'image' }
+          - { label: 'Alt', name: 'alt', widget: 'string' }
+      - label: 'Hero Image'
+        name: 'heroImage'
+        widget: 'object'
+        fields:
+          - { label: 'Src', name: 'src', widget: 'image' }
+          - { label: 'Alt', name: 'alt', widget: 'string' }
+      - label: 'Author'
+        name: author
+        widget: object
+        fields:
+          - { label: Name, name: name, widget: string }
+          - label: Image
+            name: img
+            widget: object
+            fields:
+              - { label: 'Src', name: 'src', widget: 'image' }
+              - { label: 'Alt', name: 'alt', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: true }

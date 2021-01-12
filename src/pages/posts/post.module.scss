@@ -1,0 +1,58 @@
+@import '../../themes/theme';
+
+$profile-img: $spacing-800;
+
+.body {
+  font-size: $font-size-300;
+  margin: auto;
+  max-width: $bp-300;
+  padding-top: $spacing-300;
+
+  h2 {
+    font-size: $font-size-500;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-200;
+  }
+}
+
+.author {
+  align-items: center;
+  display: flex;
+  padding-bottom: $spacing-300;
+
+  img {
+    border-radius: 50%;
+    height: $profile-img;
+    margin-right: $spacing-300;
+    width: $profile-img;
+  }
+
+  time {
+    display: block;
+  }
+}
+
+.list {
+  list-style-type: none;
+  padding-top: $spacing-200;
+
+  li {
+    margin-bottom: $spacing-300;
+  }
+}
+
+@media screen and (min-width: $bp-300) {
+  .list {
+    li {
+      margin-bottom: $spacing-500;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-400) {
+  .list {
+    li {
+      margin-bottom: $spacing-700;
+    }
+  }
+}

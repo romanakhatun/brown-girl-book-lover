@@ -1,0 +1,56 @@
+{
+  "name": "bg-book-lover",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 8080",
+    "build": "next build",
+    "start": "next start",
+    "static-build": "next build && next export",
+    "serve": "npx serve out/",
+    "stylelint": "stylelint \"src/**/*.scss\" --fix",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.13",
+    "axios": "^0.21.1",
+    "emotion-theming": "^10.0.27",
+    "framer-motion": "^2.1.4",
+    "gray-matter": "^4.0.2",
+    "next": "9.4.4",
+    "normalize-scss": "^7.0.1",
+    "raw-loader": "^4.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-icons": "^3.10.0",
+    "react-markdown": "^4.3.1",
+    "remark": "^12.0.1",
+    "remark-html": "^12.0.0",
+    "sass": "^1.26.10"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.5",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "globby": "^11.0.1",
+    "postcss": "^7.0.32",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^2.0.5",
+    "stylelint": "^13.6.1",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-order": "^4.1.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
+}
