@@ -10,7 +10,7 @@ const Newsletter = () => {
     const [errorMessage, setErrorMessage] = useState(null);
 
     const subscribe = async () => {
-        // setState("LOADING");
+        setState("LOADING");
         setErrorMessage(null);
         try {
             const response = await axios.post("/api/newsletter", { email });
@@ -31,10 +31,24 @@ const Newsletter = () => {
 
                 <form action="">
                     <FontAwesomeIcon className={styles.icon} icon={faEnvelope} />
-                    <input type="text" placeholder="Enter Your Email Address" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                    <button type="button" onClick={subscribe}> Subscribe </button>
-                    {state === "ERROR" && (<p className={styles.errorMsg}><small>{errorMessage}</small> </p>)}
-                    {state === "SUCCESS" && (<p className={styles.thankMsg}><small>Thanks For Subscribe!!</small></p>)}
+                    <input
+                        type="text"
+                        placeholder="Enter Your Email Address"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                    {/* <button type="button" onClick={subscribe}> Subscribe </button> */}
+                    <button
+                        className={`${state === "LOADING" ? "buttonGradientLoading" : ""}`}
+                        type="button"
+                        disabled={state === "LOADING"}
+                        onClick={subscribe}
+                    >
+                        Subscribe
+                   </button>
+                    {state === "ERROR" && <p className={styles.errorMsg}><small>{errorMessage}</small> </p>}
+                    {state === "SUCCESS" && <p className={styles.thankMsg}><small>Thanks For Subscribe!!</small></p>}
                 </form>
             </div>
         </div>
