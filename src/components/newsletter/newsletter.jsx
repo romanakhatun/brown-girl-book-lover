@@ -40,7 +40,7 @@ const Newsletter = () => {
                     />
                     {/* <button type="button" onClick={subscribe}> Subscribe </button> */}
                     <button
-                        className={`${state === "LOADING" ? "buttonGradientLoading" : ""}`}
+                        className={`${state === "LOADING" ? "btnLoading" : ""}`}
                         type="button"
                         disabled={state === "LOADING"}
                         onClick={subscribe}
