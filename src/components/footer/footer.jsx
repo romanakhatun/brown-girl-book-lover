@@ -22,7 +22,6 @@ const Footer = () => {
           </div>
           <div className={styles.copyright}>
             <small>&copy; {todayYear}, Brown Girl Book Lover</small>
-            <p> Designed by Alana Harte & <a href="https://www.hartecode.com/"> Developed by Sean Harte</a></p>
           </div>
         </div>
         <div className={styles['newsletter-container']}>
